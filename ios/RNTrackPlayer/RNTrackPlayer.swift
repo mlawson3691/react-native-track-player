@@ -234,8 +234,6 @@ public class RNTrackPlayer: RCTEventEmitter {
             print(self?.player)
             print("playerState:")
             print(self?.player.playerState)
-            print(".paused:")
-            print(.paused)
             if self?.player.playerState == .paused {
                 self?.sendEvent(withName: "remote-play", body: nil)
                 return MPRemoteCommandHandlerStatus.success
