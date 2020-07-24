@@ -133,18 +133,23 @@ class AVPlayerWrapper: AVPlayerWrapperProtocol {
     }
     
     func play() {
+        print("WRAPPER - play")
         avPlayer.play()
     }
     
     func pause() {
+        print("WRAPPER - pause")
         avPlayer.pause()
     }
     
     func togglePlaying() {
+        print("WRAPPER - togglePlaying")
         switch avPlayer.timeControlStatus {
         case .playing, .waitingToPlayAtSpecifiedRate:
+            print("WRAPPER - togglePlaying - call pause - case playing OR waitingToPlayAtSpecifiedRate")
             pause()
         case .paused:
+            print("WRAPPER - togglePlaying - call play - case paused")
             play()
         @unknown default:
             fatalError("Unknown AVPlayer.timeControlStatus")

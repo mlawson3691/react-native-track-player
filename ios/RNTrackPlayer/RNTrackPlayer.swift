@@ -189,11 +189,13 @@ public class RNTrackPlayer: RCTEventEmitter {
         }
         
         player.remoteCommandController.handlePauseCommand = { [weak self] _ in
+            print("handlePauseCommand")
             self?.sendEvent(withName: "remote-pause", body: nil)
             return MPRemoteCommandHandlerStatus.success
         }
         
         player.remoteCommandController.handlePlayCommand = { [weak self] _ in
+            print("handlePlayCommand")
             self?.sendEvent(withName: "remote-play", body: nil)
             return MPRemoteCommandHandlerStatus.success
         }

@@ -106,7 +106,9 @@ public class RemoteCommandController {
     public lazy var handleBookmarkCommand: RemoteCommandHandler = self.handleBookmarkCommandDefault
     
     private func handlePlayCommandDefault(event: MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus {
+        print("handlePlayCommandDefault function")
         if let audioPlayer = self.audioPlayer {
+            print("handlePlayCommandDefault - call play")
             audioPlayer.play()
             return MPRemoteCommandHandlerStatus.success
         }
@@ -114,7 +116,9 @@ public class RemoteCommandController {
     }
     
     private func handlePauseCommandDefault(event: MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus {
+        print("handlePauseCommandDefault function")
         if let audioPlayer = self.audioPlayer {
+            print("handlePauseCommandDefault - call pause")
             audioPlayer.pause()
             return MPRemoteCommandHandlerStatus.success
         }
@@ -130,7 +134,9 @@ public class RemoteCommandController {
     }
     
     private func handleTogglePlayPauseCommandDefault(event: MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus {
+        print("handleTogglePlayPauseCommandDefault function")
         if let audioPlayer = self.audioPlayer {
+            print("handleTogglePlayPauseCommandDefault - call togglePlaying")
             audioPlayer.togglePlaying()
             return MPRemoteCommandHandlerStatus.success
         }
